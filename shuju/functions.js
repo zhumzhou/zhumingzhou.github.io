@@ -57,11 +57,6 @@ function timeElapse(date){
 	}
 	
 	
-	if (seconds < 10) {
-		seconds = "0" + seconds;
-	}
-	
-	
 	
 
 	var timeStr = d.getFullYear() + "年"+ (d.getMonth() + 1) +"月"+ d.getDate() +"日 "+ hours + ":" + minutes;
