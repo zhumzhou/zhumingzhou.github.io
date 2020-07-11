@@ -42,28 +42,29 @@ function timeElapse(date){
 	var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
 	var days = Math.floor(seconds / (3600 * 24));
 	seconds = seconds % (3600 * 24);
-	var hours = Math.floor(seconds / 3600);
+	
+	
+	var d = new Date();
+	
+	var hours = d.getHours();
 	if (hours < 10) {
 		hours = "0" + hours;
 	}
-	seconds = seconds % 3600;
-	var minutes = Math.floor(seconds / 60);
+	
+	var minutes = d.getMinutes();
 	if (minutes < 10) {
 		minutes = "0" + minutes;
 	}
-	seconds = seconds % 60;
-	var year = days/365;
-	days=days%365;
+	
 	
 	if (seconds < 10) {
 		seconds = "0" + seconds;
 	}
 	
 	
-	var d = new Date();
+	
 
-	var d2 = d.getFullYear() + "年"+ (d.getMonth() + 1) +"月"+ d.getDate() +"日";
-	var timeStr = d.getFullYear() + "年"+ (d.getMonth() + 1) +"月"+ d.getDate() +"日 "+ d.getHours() + ":" + d.getMinutes();
+	var timeStr = d.getFullYear() + "年"+ (d.getMonth() + 1) +"月"+ d.getDate() +"日 "+ hours + ":" + minutes;
 	var result = " <span class=\"digit\">" + timeStr; 
 	
 	$("#clock").html(result);
